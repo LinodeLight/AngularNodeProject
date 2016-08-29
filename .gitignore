@@ -1,0 +1,6 @@
+coverage
+.grunt
+node_modules
+public/vendor
+.idea
+npm-debug.log

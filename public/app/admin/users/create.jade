@@ -1,0 +1,68 @@
+.container.top-padding-med
+	.card
+		form(name='createForm')
+			fieldset
+				.col-xs-12
+					legend New User
+				.form-group.row
+					.col-xs-12
+						label.col-md-2.form-control-label(for="name") Name
+						.col-md-10
+							input.form-control(
+							id="name"
+							name="name"
+							type="text"
+							placeholder="First Name"
+							ng-model="name"
+							required)
+				.form-group.row
+					.col-xs-12
+						label.col-md-2.form-control-label(for="username") Username
+						.col-md-10
+							input.form-control(
+							id="username"
+							name="username"
+							type="text"
+							placeholder="Username"
+							ng-model="username"
+							required)
+				.form-group.row
+					.col-xs-12
+						label.col-md-2.form-control-label(for="email") Email
+						.col-md-10
+							input.form-control(
+							id="email"
+							name="email"
+							type="email"
+							placeholder="Email"
+							ng-model="email"
+							required)
+				.form-group.row
+					.col-xs-12
+						label.col-md-2.form-control-label(for="password") Password
+						.col-md-10
+							input.form-control(
+							id="password"
+							name="password"
+							type="password"
+							placeholder="Password"
+							ng-model="password"
+							required)
+				.form-group.row
+					.col-xs-12
+						label.col-md-2.form-control-label(for="roles") Roles
+						.col-md-10
+							select.form-control(
+							id="roles"
+							ng-model="role_select"
+							ng-options="item.value as item.text for item in role_options"
+							required)
+				.form-group.row
+					.col-xs-12
+						.col-md-10.col-md-offset-2
+							.pull-xs-right
+								button.btn.btn-primary(
+								ng-click="userCreate()"
+								ng-disabled="createForm.$invalid") Submit
+								| &nbsp;
+								a.btn.btn-secondary(href="/") Cancel

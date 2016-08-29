@@ -1,0 +1,31 @@
+#navbar.navbar.navbar-fixed-top.navbar-inner(ng-controller="NavBarController")
+    .container
+        a.btn.btn-navbar(
+        data-toggle='collapse'
+        data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        .col-md-12
+            .nav-collapse
+                .col-md-12
+                    ul.nav.navbar-nav
+                        li.nav-item
+                            a.nav-link.navbar-brand(href='/') Angular Node project
+                        li.nav-item
+                            a.nav-link(ng-hide="!identity.isAuthenticated()" href='/profile') Profile
+                        li.nav-item(ng-hide="!identity.isAuthenticated()")
+                            a.nav-link.dropdown-toggle(data-toggle="dropdown") Admin
+                                b.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href='/admin/users').dropdown-item Users
+                    ul.nav.navbar-nav.navbar-right
+                        li.nav-item(ng-hide="identity.isAuthenticated()")
+                            a.nav-link(href='/login') Login
+                        li.nav-item(ng-hide="!identity.isAuthenticated()")
+                            a.nav-link(ng-click="signout()") Logout
+
+
+
+

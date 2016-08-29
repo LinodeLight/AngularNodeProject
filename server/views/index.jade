@@ -1,0 +1,8 @@
+extend ../includes/layout
+block main-content
+    section.header
+        div(ng-include="'/partials/main/navbar'")
+    section.content
+        div(ng-view)
+    section.footer
+        div(ng-include="'/partials/main/footer'")

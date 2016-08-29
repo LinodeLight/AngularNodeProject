@@ -1,0 +1,69 @@
+.container
+    .card
+        form.form-horizontal(name='userForm')
+            fieldset
+                .col-xs-12
+                    legend {{user.name}}
+                .form-group.row
+                    .col-xs-12
+                        label.col-sm-2.form-control-label(for="name") Name
+                        .col-sm-10
+                            input.form-control(
+                            id="name"
+                            name="name"
+                            type="text"
+                            placeholder="Name"
+                            ng-model="user.name"
+                            required)
+                .form-group.row
+                    .col-xs-12
+                        label.col-md-2.form-control-label(for="username") Username
+                        .col-md-10
+                            input.form-control(
+                            id="username"
+                            name="username"
+                            type="text"
+                            placeholder="Username"
+                            ng-model="user.username"
+                            readonly)
+                .form-group.row
+                    .col-xs-12
+                        label.col-md-2.form-control-label(for="email") Email
+                        .col-md-10
+                            input.form-control(
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="Email"
+                            ng-model="user.email"
+                            required)
+                .form-group.row
+                    .col-xs-12
+                        label.col-md-2.form-control-label(for="roles") Roles
+                        .col-md-10
+                            input.form-control(
+                            id="roles"
+                            name="roles"
+                            type="text"
+                            placeholder="Roles"
+                            ng-model="user.role"
+                            readonly)
+                .form-group.row
+                    .col-xs-12
+                        label.col-md-2.form-control-label(for="password") Password
+                        .col-md-10
+                            input.form-control(
+                            id="password"
+                            name="password"
+                            type="password"
+                            placeholder="Password"
+                            ng-model="user.password")
+                .form-group.row
+                    .col-xs-12
+                        .col-md-10.col-md-offset-2
+                            .pull-xs-right
+                                button.btn.btn-primary(
+                                ng-click="update()"
+                                ng-disabled="userForm.$invalid") Submit
+                                | &nbsp;
+                                a.btn.btn-secondary(href="/") Cancel

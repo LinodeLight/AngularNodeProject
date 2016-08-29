@@ -1,0 +1,73 @@
+.container
+	.card
+		form(name='userform')
+			fieldset
+				.col-xs-12
+					legend {{user.name}}
+				.form-group.row
+					.col-xs-12
+						label.col-md-2.control-label(for="name") Name
+						.col-md-10
+							input.form-control(
+							id="name"
+							name="name"
+							type="text"
+							ng-model="user.name"
+							required)
+				.form-group.row
+					.col-xs-12
+						label.col-md-2.control-label(for="username") Username
+						.col-md-10
+							input.form-control(
+							id="username"
+							name="username"
+							type="text"
+							ng-model="user.username"
+							readonly)
+				.form-group.row
+					.col-xs-12
+						label.col-md-2.control-label(for="email") Email
+						.col-md-10
+							input.form-control(
+							id="email"
+							name="email"
+							type="email"
+							ng-model="user.email"
+							required)
+				.form-group.row
+					.col-xs-12
+						label.col-md-2.control-label(for="roles") Roles
+						.col-md-10
+							input.form-control(
+							id="roles"
+							name="roles"
+							type="text"
+							ng-model="user.role"
+							readonly)
+				.form-group.row
+					.col-xs-12
+						label.col-md-2.control-label(for="password") Password
+						.col-md-10
+							input.form-control(
+							id="password"
+							name="password"
+							type="password"
+							ng-model="password")
+				.form-group.row
+					.col-xs-12
+						label.col-md-2.control-label(for="password") Repeat Password
+						.col-md-10
+							input.form-control(
+							id="password"
+							name="password"
+							type="password"
+							ng-model="password_rep")
+				.form-group.row
+					.col-xs-12
+						.col-md-10.col-md-offset-2
+							.pull-right
+								button.btn.btn-primary(ng-click="userUpdate()", ng-disabled="") Submit
+								| &nbsp;
+								button.btn.btn-danger(ng-click="userDelete()", ng-disabled="") Delete
+								| &nbsp;
+								a.btn.btn-secondary(href="/admin/users") Cancel

@@ -1,0 +1,27 @@
+.container
+    .row
+        .col-md-10
+            h1 Users
+        .col-md-2.pull-right
+            a.btn.block.btn-primary-outline(href="/admin/create") Create New User
+
+
+    table#users.table
+        thead
+            tr
+                th Name
+                th Email
+                th Username
+                th Roles
+                th
+
+        tbody
+            tr(ng-repeat="user in users")
+                td {{user.name}}
+                td {{user.email}}
+                td {{user.username}}
+                td
+                    p(ng-repeat="role in user.role")
+                        text {{role}}
+                td
+                    a.btn.center-block.btn-primary-outline.pull-right(href="/admin/user/{{user._id}}") Edit
